@@ -1,0 +1,44 @@
+{%extends 'appbase.html'%}
+
+{%block contents%}
+
+<div class="container p-3 my-3 bg-dark text-white">
+  <h1>List Of Teachers</h1>
+    <span>
+        <strong>Note:</strong><p style="color:RED">Checked Image extension also, avoided Case sensitive and not matached with csv file with pic folders</p>
+    </span>
+    <table border="2px" class="table table-hover">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Room Number</th>
+                        <th scope="col">Subjects</th>
+                        <th scope="col">Profile Pic</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:White">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.FirstName}}</td>
+                        <td>{{i.LastName}}</td>
+                        <td>{{i.EmailAddress}}</td>
+                        <td>{{i.PhoneNumber}}</td>
+                        <td>{{i.RoomNumber}}</td>
+                        <td>{{i.Subjectstaught}}</td>
+                        <td><img src="/media/profilepic/{{i.Profilepicture}}" width="45" height="40"></td>
+                    </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+
+
+
+</div>
+{%endblock%}
